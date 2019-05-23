@@ -14,7 +14,7 @@ const getCitiesController = (req, res) => {
             });
         })
         .catch(error => {
-            res.send(error);
+            res.json({ error });
         });
 
 };
@@ -26,13 +26,13 @@ const postCitiesController = (req, res) => {
     })
     .then(docRef => {
         res.status(201)
-            .send({
+            .json({
                 id: docRef.id,
                 message: "City successfully created"
             });
     })
     .catch(error => {
-        res.send({ error });
+        res.json({ error });
     });
 };
 
