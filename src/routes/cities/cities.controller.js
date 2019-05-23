@@ -25,15 +25,15 @@ const postCitiesController = (req, res) => {
        ...req.body
     })
     .then(docRef => {
-    res.status(201)
-        .send({
-            id: docRef.id,
-            message: "City successfully created"
-        });
+        res.status(201)
+            .send({
+                id: docRef.id,
+                message: "City successfully created"
+            });
     })
     .catch(error => {
-            res.send({ error });
-        });
+        res.send({ error });
+    });
 
 
 };
